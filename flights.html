@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Flights - SkyWings Airlines</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/flights.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-plane-departure me-2"></i>SkyWings Airlines
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="flights.html">Flights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Book Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header-section py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold">Available Flights</h1>
+                    <p class="lead">Find and book your perfect flight from our extensive selection</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="index.html" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-left me-2"></i>New Search
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Summary -->
+    <section class="search-summary py-3 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="search-info">
+                        <span class="badge bg-primary me-2">Search Results</span>
+                        <span id="searchRoute" class="fw-bold"></span>
+                        <span id="searchDate" class="text-muted ms-3"></span>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <span id="resultCount" class="text-muted"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Filters Sidebar -->
+                <div class="col-lg-3">
+                    <div class="filters-card">
+                        <h5 class="mb-3">Filters</h5>
+                        
+                        <!-- Price Range -->
+                        <div class="filter-group mb-4">
+                            <h6>Price Range</h6>
+                            <div class="price-slider">
+                                <input type="range" class="form-range" id="priceRange" min="0" max="2000" value="2000">
+                                <div class="d-flex justify-content-between">
+                                    <span>$0</span>
+                                    <span id="priceValue">$2000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Airlines -->
+                        <div class="filter-group mb-4">
+                            <h6>Airlines</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="skywings" checked>
+                                <label class="form-check-label" for="skywings">
+                                    SkyWings Airlines
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="partner1">
+                                <label class="form-check-label" for="partner1">
+                                    Partner Airlines
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Stops -->
+                        <div class="filter-group mb-4">
+                            <h6>Stops</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="stops" id="direct" checked>
+                                <label class="form-check-label" for="direct">
+                                    Direct
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="stops" id="oneStop">
+                                <label class="form-check-label" for="oneStop">
+                                    1 Stop
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="stops" id="multiStop">
+                                <label class="form-check-label" for="multiStop">
+                                    Multi-Stop
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Departure Time -->
+                        <div class="filter-group mb-4">
+                            <h6>Departure Time</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="morning">
+                                <label class="form-check-label" for="morning">
+                                    Morning (6AM - 12PM)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="afternoon">
+                                <label class="form-check-label" for="afternoon">
+                                    Afternoon (12PM - 6PM)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="evening">
+                                <label class="form-check-label" for="evening">
+                                    Evening (6PM - 12AM)
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Clear Filters -->
+                        <button class="btn btn-outline-secondary w-100" id="clearFilters">
+                            Clear All Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Flight Results -->
+                <div class="col-lg-9">
+                    <!-- Sort Options -->
+                    <div class="sort-options mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-muted">Sort by:</span>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-outline-primary active" data-sort="price">Price</button>
+                                <button type="button" class="btn btn-outline-primary" data-sort="duration">Duration</button>
+                                <button type="button" class="btn btn-outline-primary" data-sort="departure">Departure</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flight List -->
+                    <div id="flightList" class="flight-list">
+                        <!-- Flights will be populated by JavaScript -->
+                    </div>
+
+                    <!-- Load More -->
+                    <div class="text-center mt-4">
+                        <button class="btn btn-outline-primary" id="loadMore">
+                            Load More Flights
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5>SkyWings Airlines</h5>
+                    <p>Your trusted partner for safe, comfortable, and luxurious air travel experiences.</p>
+                    <div class="social-links">
+                        <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="flights.html">Flights</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">Baggage Policy</a></li>
+                        <li><a href="#">Travel Insurance</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6>Contact Info</h6>
+                    <p><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@skywings.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>123 Aviation Blvd, Sky City</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 SkyWings Airlines. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="me-3">Privacy Policy</a>
+                    <a href="#" class="me-3">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/flights.js"></script>
+</body>
+</html>

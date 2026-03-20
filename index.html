@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWings Airlines - Book Your Flight</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-plane-departure me-2"></i>SkyWings Airlines
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="flights.html">Flights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Book Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6">
+                        <h1 class="hero-title">Discover the World with SkyWings</h1>
+                        <p class="hero-subtitle">Experience luxury travel with our premium airline service. Book your next adventure today!</p>
+                        <a href="booking.html" class="btn btn-primary btn-lg">Book Your Flight</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="search-card">
+                        <h3 class="text-center mb-4">Find Your Perfect Flight</h3>
+                        <form id="searchForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="from" class="form-label">From</label>
+                                    <select class="form-select" id="from" required>
+                                        <option value="">Select departure city</option>
+                                        <option value="NYC">New York (JFK)</option>
+                                        <option value="LAX">Los Angeles (LAX)</option>
+                                        <option value="CHI">Chicago (ORD)</option>
+                                        <option value="MIA">Miami (MIA)</option>
+                                        <option value="LON">London (LHR)</option>
+                                        <option value="PAR">Paris (CDG)</option>
+                                        <option value="TOK">Tokyo (NRT)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="to" class="form-label">To</label>
+                                    <select class="form-select" id="to" required>
+                                        <option value="">Select arrival city</option>
+                                        <option value="NYC">New York (JFK)</option>
+                                        <option value="LAX">Los Angeles (LAX)</option>
+                                        <option value="CHI">Chicago (ORD)</option>
+                                        <option value="MIA">Miami (MIA)</option>
+                                        <option value="LON">London (LHR)</option>
+                                        <option value="PAR">Paris (CDG)</option>
+                                        <option value="TOK">Tokyo (NRT)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="departure" class="form-label">Departure Date</label>
+                                    <input type="date" class="form-control" id="departure" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="return" class="form-label">Return Date (Optional)</label>
+                                    <input type="date" class="form-control" id="return">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="passengers" class="form-label">Passengers</label>
+                                    <select class="form-select" id="passengers">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="class" class="form-label">Class</label>
+                                    <select class="form-select" id="class">
+                                        <option value="economy">Economy</option>
+                                        <option value="business">Business</option>
+                                        <option value="first">First Class</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">&nbsp;</label>
+                                    <button type="submit" class="btn btn-primary w-100">Search Flights</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose SkyWings?</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Safe & Secure</h4>
+                        <p>Your safety is our top priority with state-of-the-art aircraft and experienced pilots.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>On-Time Guarantee</h4>
+                        <p>We pride ourselves on punctuality with a 95% on-time arrival record.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Premium Service</h4>
+                        <p>Enjoy luxury amenities and exceptional customer service throughout your journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="destinations-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Popular Destinations</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400" alt="New York" class="img-fluid">
+                        <div class="destination-overlay">
+                            <h5>New York</h5>
+                            <p>Starting from $299</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1502602898534-47d3c0c0b0b8?w=400" alt="Paris" class="img-fluid">
+                        <div class="destination-overlay">
+                            <h5>Paris</h5>
+                            <p>Starting from $599</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400" alt="Tokyo" class="img-fluid">
+                        <div class="destination-overlay">
+                            <h5>Tokyo</h5>
+                            <p>Starting from $799</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400" alt="London" class="img-fluid">
+                        <div class="destination-overlay">
+                            <h5>London</h5>
+                            <p>Starting from $549</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5>SkyWings Airlines</h5>
+                    <p>Your trusted partner for safe, comfortable, and luxurious air travel experiences.</p>
+                    <div class="social-links">
+                        <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="flights.html">Flights</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">Baggage Policy</a></li>
+                        <li><a href="#">Travel Insurance</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6>Contact Info</h6>
+                    <p><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@skywings.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>123 Aviation Blvd, Sky City</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 SkyWings Airlines. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="me-3">Privacy Policy</a>
+                    <a href="#" class="me-3">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
