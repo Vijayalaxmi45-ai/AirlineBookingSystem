@@ -1,0 +1,6 @@
+/* Admin page specific styles */
+body { background: #f7f8fa; }
+.card { border-radius: 12px; }
+#flightsList .flight-item { padding: .75rem; border-bottom: 1px solid #eee; }
+#flightsList .flight-item:last-child { border-bottom: none; }
+.navbar .navbar-brand { font-weight: 700; }

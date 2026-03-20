@@ -55,3 +55,38 @@ If you want, I can:
 - Add a minimal Node.js + Express API that uses the `create_database.sql` schema and exposes endpoints for flights and bookings.
 - Try to commit and push these changes to your GitHub repo from this machine (you may be prompted to authenticate).
 - Provide step-by-step help importing the repo into Vercel and setting environment variables.
+
+Backend (optional) — quick start
+
+This repo now includes a minimal Node.js + Express API in `server.js` that exposes `/api/flights` for GET and POST.
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Create a `.env` file (not committed) or set environment variables. Example `.env`:
+
+```
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=airline_booking
+DB_USER=root
+DB_PASS=root
+```
+
+3. Run the server:
+
+```bash
+npm run dev   # or `npm start` in production
+```
+
+4. Open http://localhost:3000/admin.html to manage flights (add/list).
+
+Offline support (service worker)
+- A `sw.js` service worker is included and registered from the main `js/script.js`. It caches HTML/CSS/JS assets so the site will still show styling when offline after the page has been visited once.
+
+Notes & next steps
+- The backend uses MySQL to persist flights. Run `create_database.sql` to create the schema before inserting flights via the admin page.
+- I can help: secure auth for the admin page, validation, pagination, and deploy the server to a host (Heroku, Render, or similar) and use a managed MySQL instance so Vercel frontend can call the API.

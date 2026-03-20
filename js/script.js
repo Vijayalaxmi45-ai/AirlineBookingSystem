@@ -25,6 +25,11 @@ function initApp() {
     if (typeof bootstrap !== 'undefined') {
         initializeBootstrapComponents();
     }
+
+    // Register service worker for offline support (caches CSS/JS/HTML)
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
 }
 
 function setMinDates() {
