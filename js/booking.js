@@ -38,13 +38,16 @@ function loadFlightData() {
 
 function displayFlightSummary(flight) {
     const cityNames = {
-        'NYC': 'New York (JFK)',
-        'LAX': 'Los Angeles (LAX)',
-        'CHI': 'Chicago (ORD)',
-        'MIA': 'Miami (MIA)',
+        'DEL': 'New Delhi (DEL)',
+        'BOM': 'Mumbai (BOM)',
+        'BLR': 'Bengaluru (BLR)',
+        'MAA': 'Chennai (MAA)',
+        'HYD': 'Hyderabad (HYD)',
         'LON': 'London (LHR)',
-        'PAR': 'Paris (CDG)',
-        'TOK': 'Tokyo (NRT)'
+        'DXB': 'Dubai (DXB)',
+        'SIN': 'Singapore (SIN)',
+        'NYC': 'New York (JFK)',
+        'SYD': 'Sydney (SYD)'
     };
     
     const flightSummary = document.getElementById('flightSummary');
